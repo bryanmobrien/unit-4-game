@@ -1,0 +1,44 @@
+body {
+    width 50%;
+}
+
+p {
+    text-decoration-color: green;
+    color: green;
+}
+.gems {
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+}
+.page-header {
+    margin-left: 10;
+    background-color: coral;
+    width: 33%;
+    color: white;
+}
+/* .panel-body {
+    width: 50%;
+} */
+.panel-title {
+    width: 50%;
+}
+.panel-warning {
+    width: 50%;
+}
+.instructions {
+    width: 50%;
+}
+
+.h3 {
+    width: 50%;
+}
+
+#instructions.panel.panel-warning {
+    background-color: beige;
+    text-decoration-color: green;
+}
+
+.col-xs-3 {
+    border: 3px, solid ;
+}

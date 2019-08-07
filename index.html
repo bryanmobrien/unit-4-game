@@ -1,48 +1,84 @@
-<!-- The player will have to guess the answer, just like in Word Guess. This time, though, the player will guess with numbers instead of letters.
-
-Here's how the app works:
-
-    There will be four crystals displayed as buttons on the page.
-
-    The player will be shown a random number at the start of the game.
-
-    When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
-
-    Your game will hide this amount until the player clicks a crystal.
-    When they do click one, update the player's score counter.
-
-    The player wins if their total score matches the random number from the beginning of the game.
-
-    The player loses if their score goes above the random number.
-
-    The game restarts whenever the player wins or loses.
-
-    When the game begins again, the player should see a new random number. Also, all the crystals will have     four new hidden values. Of course, the user's score (and score counter) will reset to zero.
-
-
-    The app should show the number of games the player wins and loses. 
-    To that end, do not refresh the page as a means to restart the game.
-
-Option 1 Game design notes
-
-
-The random number shown at the start of the game should be between 19 - 120.
-
-
-Each crystal should have a random hidden value between 1 - 12. -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>unit-4-game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="assets/javascript/game.js" type="text/javascript"></script>
+	<title>Crystal Collector</title>
 </head>
-<body>
-    Hello
-    <script>
-    </script>
+<body background="assets/images/background.png">
+	<div class="page-header">
+	  <h1>Crystal collector!</h1>
+	</div>
+	<br>
+	<div class="panel panel-warning" id="instructions">
+	    <div class="panel-heading">
+	    	<h3 class="panel-title">Instructions</h3>
+	  	</div>
+		<div class="panel-body">
+            <p>You will be given a random number at the start of the game.</p>
+            <p>There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.</p>
+            <p>You win the game by matching your total score to a random rumber, you lose the game if your total score goes above the random number.</p>
+            <p>The value of each crystal is hidden from you until you click on it.</p>
+            <p>Each time when the game starts, the game will chang the values of each crystal.</p>
+		</div>
+	</div>
+	<br>
+	
+		
+	</div>
+	<br>
+	<div class="btn-group">
+		<button type="button" class="btn btn-default btn-md" id="buttonReset">Play Again?</button>
+	</div>
+	<br>
+	<div class="panel panel-warning" id="gemRow">
+	  	<div class="panel-body">
+		    <div class="row">
+				<!-- <div class="col-xs-6 col-md-2 col-md-offset-2"> -->
+                <div class="col-xs-3">
+                    <img src="assets/images/diamond_1.png" class="gems" id="diamond_1">
+				</div>
+				<div class="col-xs-3">
+					<img src="assets/images/diamond_2.png" class="gems" id="diamond_2">
+				</div>
+				<div class="col-xs-3">
+					<img src="assets/images/diamond_3.png" class="gems" id="diamond_3">
+				</div>
+				<div class="col-xs-3">
+					<img src="assets/images/diamond_4.png" class="gems" id="diamond_4">
+				</div>
+			</div>
+	  	</div>
+    </div>
+    <div class="panel panel-warning" id="stats">
+        <div class="panel-heading">
+          <h3 class="panel-title">Stats</h3>
+        </div>
+        <div class="panel-body">
+          <!-- <span id="wins">Wins:  </span> || 
+          <span id="losses">Losses: </span> -->
+          <h4 id="wins">Wins:  </h4>
+          <h4 id="losses">Losses: </h4>
+        </div>
+    </div>
+        <div class="container">
+            <div class="panel panel-warning" id="given">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Points to Match</h3>
+                </div>
+                <div class="panel-body" id="scoreToMeet">
+                </div>
+            </div>
+    <div class="panel panel-warning" id="points">
+        <div class="panel-heading">
+            <h3 class="panel-title">Your total score is:</h3>
+        </div>
+        <div class="panel-body" id=scoreNow>
+            --
+        </div>
+    </div>
+  </div>
 </body>
 </html>
